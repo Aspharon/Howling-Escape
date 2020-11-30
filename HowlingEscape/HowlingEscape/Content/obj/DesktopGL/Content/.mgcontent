@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/BG.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/Bush.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/FallenBush.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/Trunk.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W1.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W2.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W3.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W4.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W5.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
