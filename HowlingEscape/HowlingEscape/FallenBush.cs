@@ -11,9 +11,10 @@ namespace HowlingEscape
 {
     class FallenBush : GameObject
     {
-        Texture2D sprite;
+        public Texture2D sprite;
         float rotation;
         Vector2 origin;
+        public bool hit;
 
         public FallenBush(Vector2 pos)
         {
@@ -24,7 +25,7 @@ namespace HowlingEscape
 
         public override void Update(GameTime gameTime)
         {
-            rotation += 0.03f;
+            rotation -= 0.03f;
             position.X -= Game1.speed + 5;
         }
 

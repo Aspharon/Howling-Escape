@@ -58,6 +58,41 @@ namespace HowlingEscape
             }
             else airtime++;
 
+            if (velocity.Y > 0 && position.Y >= 50 && position.Y < 92)
+            {
+                foreach(Bush b in Objects.List.OfType<Bush>())
+                {
+                    if (b.position.X > position.X - b.sprite.Width && b.position.X < position.X + currentSprite.Width)
+                    {
+                        b.FallApart();
+                        velocity.Y = -5.5f;
+                    }
+                }
+            }
+
+            if (position.Y == 96 && position.Y > 72)
+            {
+                foreach (Bush b in Objects.List.OfType<Bush>())
+                {
+                    if (b.position.X > position.X - b.sprite.Width && b.position.X < position.X + currentSprite.Width && !b.hit)
+                    {
+                        b.hit = true;
+                        velocity.X = -5.5f;
+                    }
+                }
+            }
+
+            velocity.X *= 0.9f;
+
+            if (position.X < 100)
+            {
+                position.X += 0.1f;
+            }
+            else
+            {
+                position.X = 100;
+            }
+
             Animate();
         }
 

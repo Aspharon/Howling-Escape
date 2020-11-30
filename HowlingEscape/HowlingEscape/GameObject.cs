@@ -5,7 +5,7 @@ namespace HowlingEscape
 {
     public abstract class GameObject
     {
-        protected Vector2 position;
+        public Vector2 position;
         protected int layer;
         protected bool visible;
 

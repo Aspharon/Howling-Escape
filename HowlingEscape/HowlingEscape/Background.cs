@@ -5,7 +5,7 @@ namespace HowlingEscape
 {
     class Background : GameObject
     {
-        Texture2D sprite;
+        public Texture2D sprite;
 
         public Background()
         {

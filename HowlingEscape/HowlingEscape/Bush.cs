@@ -10,8 +10,8 @@ namespace HowlingEscape
 {
     class Bush : GameObject
     {
-        Texture2D sprite;
-
+        public Texture2D sprite;
+        public bool hit;
         public Bush()
         {
             position = new Vector2(380, 72);
@@ -27,12 +27,18 @@ namespace HowlingEscape
         {
             if (inputHelper.KeyPressed(Microsoft.Xna.Framework.Input.Keys.B))
             {
-                FallenBush fallenBush = new FallenBush(position);
-                Trunk trunk = new Trunk(position);
-                Objects.AddList.Add(fallenBush);
-                Objects.AddList.Add(trunk);
-                position.X = -200;
+                FallApart();
             }
+        }
+
+        public void FallApart()
+        {
+            if (hit) return;
+            FallenBush fallenBush = new FallenBush(position);
+            Trunk trunk = new Trunk(position);
+            Objects.AddList.Add(fallenBush);
+            Objects.AddList.Add(trunk);
+            Objects.RemoveList.Add(this);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

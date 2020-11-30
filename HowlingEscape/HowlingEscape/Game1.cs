@@ -19,6 +19,7 @@ namespace HowlingEscape
         public static ContentManager contentManager;
         public static Random rand;
         public static float speed = 4;
+        public static int gamestate;
 
         int timeSinceLastBush;
 
@@ -45,7 +46,10 @@ namespace HowlingEscape
 
             Wolf wolf = new Wolf();
             Objects.List.Add(wolf);
-            
+
+            Vine vine = new Vine();
+            Objects.List.Add(vine);
+
             base.Initialize();
         }
 
@@ -65,18 +69,21 @@ namespace HowlingEscape
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            inputHelper.Update(gameTime);
-
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            timeSinceLastBush++;
-
-            if (timeSinceLastBush > 100 && rand.Next(100) == 1)
+            if (gamestate == 0)
             {
-                timeSinceLastBush = 0;
-                Bush bush = new Bush();
-                Objects.List.Add(bush);
+                inputHelper.Update(gameTime);
+
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                    Exit();
+
+                timeSinceLastBush++;
+
+                if (timeSinceLastBush > 100 && rand.Next(100) == 1)
+                {
+                    timeSinceLastBush = 0;
+                    Bush bush = new Bush();
+                    Objects.List.Add(bush);
+                }
             }
 
             // TODO: Add your update logic here
@@ -91,6 +98,9 @@ namespace HowlingEscape
             foreach (GameObject obj in Objects.AddList)
                 Objects.List.Add(obj);
             Objects.AddList.Clear();
+            foreach (GameObject obj in Objects.RemoveList)
+                Objects.List.Remove(obj);
+            Objects.RemoveList.Clear();
         }
 
         /// <summary>
