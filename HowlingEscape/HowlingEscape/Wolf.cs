@@ -82,6 +82,30 @@ namespace HowlingEscape
                 }
             }
 
+            if (position.Y < 40 && position.Y > 10)
+            {
+                foreach (Bird b in Objects.List.OfType<Bird>())
+                {
+                    if (b.position.X > position.X - b.sprites[0].Width && b.position.X < position.X + currentSprite.Width && !b.hit)
+                    {
+                        b.GetHit();
+                        velocity.X = -5.5f;
+                    }
+                }
+            }
+
+            if (position.Y < 10)
+            {
+                foreach (Bird b in Objects.List.OfType<Bird>())
+                {
+                    if (b.position.X > position.X - b.sprites[0].Width && b.position.X < position.X + currentSprite.Width && !b.hit)
+                    {
+                        b.GetHit();
+                        velocity.Y = -5.5f;
+                    }
+                }
+            }
+
             velocity.X *= 0.9f;
 
             if (position.X < 100)

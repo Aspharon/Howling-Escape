@@ -43,6 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Background.cs" />
+    <Compile Include="Bird.cs" />
     <Compile Include="Bush.cs" />
     <Compile Include="FallenBush.cs" />
     <Compile Include="Game1.cs" />

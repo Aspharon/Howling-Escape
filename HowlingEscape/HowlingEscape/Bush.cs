@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace HowlingEscape
 {
@@ -12,10 +13,12 @@ namespace HowlingEscape
     {
         public Texture2D sprite;
         public bool hit;
+        SoundEffect sound;
         public Bush()
         {
             position = new Vector2(380, 72);
             sprite = Game1.contentManager.Load<Texture2D>("Bush");
+            sound = Game1.contentManager.Load<SoundEffect>("leaves");
         }
 
         public override void Update(GameTime gameTime)
@@ -27,13 +30,14 @@ namespace HowlingEscape
         {
             if (inputHelper.KeyPressed(Microsoft.Xna.Framework.Input.Keys.B))
             {
-                FallApart();
+                //FallApart();
             }
         }
 
         public void FallApart()
         {
             if (hit) return;
+            sound.Play();
             FallenBush fallenBush = new FallenBush(position);
             Trunk trunk = new Trunk(position);
             Objects.AddList.Add(fallenBush);

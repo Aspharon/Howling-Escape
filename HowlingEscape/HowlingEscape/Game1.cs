@@ -84,6 +84,12 @@ namespace HowlingEscape
                     Bush bush = new Bush();
                     Objects.List.Add(bush);
                 }
+
+                if (rand.Next(350) == 1)
+                {
+                    Bird bird = new Bird();
+                    Objects.List.Add(bird);
+                }
             }
 
             // TODO: Add your update logic here

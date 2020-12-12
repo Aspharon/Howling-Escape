@@ -7,7 +7,11 @@
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/BG.png</File>
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/Bush.png</File>
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/end.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/F1.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/F2.png</File>
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/FallenBush.png</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/leaves.wav</File>
+    <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/pigeon.ogg</File>
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/Trunk.png</File>
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/vine.png</File>
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W1.png</File>
@@ -17,6 +21,10 @@
     <File>H:/UU/3-1 - Minor Game Design/Kernmodule 2/Game 5/HowlingEscape/HowlingEscape/Content/W5.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

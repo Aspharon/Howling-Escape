@@ -27,3 +27,8 @@ H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\ob
 H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\obj\Release\HowlingEscape.csproj.CopyComplete
 H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\obj\Release\HowlingEscape.exe
 H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\obj\Release\HowlingEscape.pdb
+H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\bin\DesktopGL\AnyCPU\Release\Content\F1.xnb
+H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\bin\DesktopGL\AnyCPU\Release\Content\F2.xnb
+H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\bin\DesktopGL\AnyCPU\Release\Content\pigeon.xnb
+H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\obj\Release\HowlingEscape.csprojAssemblyReference.cache
+H:\UU\3-1 - Minor Game Design\Kernmodule 2\Game 5\HowlingEscape\HowlingEscape\bin\DesktopGL\AnyCPU\Release\Content\leaves.xnb
