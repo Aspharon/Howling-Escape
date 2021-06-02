@@ -21,6 +21,8 @@ namespace HowlingEscape
         public override void Update(GameTime gameTime)
         {
             position.X -= Game1.speed;
+            if (position.X < -50)
+                Objects.RemoveList.Add(this);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

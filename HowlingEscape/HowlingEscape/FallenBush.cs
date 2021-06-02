@@ -27,6 +27,8 @@ namespace HowlingEscape
         {
             rotation -= 0.03f;
             position.X -= Game1.speed + 5;
+            if (position.X < -50)
+                Objects.RemoveList.Add(this);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

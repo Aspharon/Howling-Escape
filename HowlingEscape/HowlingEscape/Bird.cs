@@ -34,6 +34,9 @@ namespace HowlingEscape
                 Animate();
                 spriteTimer = 0;
             }
+
+            if (position.X < -50)
+                Objects.RemoveList.Add(this);
         }
 
         public void GetHit()

@@ -68,8 +68,7 @@ namespace HowlingEscape
             {
                 Objects.RemoveList.Add(o);
             }
-            Background endScreen = new Background();
-            endScreen.sprite = Game1.contentManager.Load<Texture2D>("end");
+            Background endScreen = new Background(Game1.contentManager.Load<Texture2D>("end"), 0, 1);
             Objects.AddList.Add(endScreen);
             Game1.gamestate++;
         }

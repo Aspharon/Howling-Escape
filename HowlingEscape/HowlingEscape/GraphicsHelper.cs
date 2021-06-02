@@ -50,7 +50,7 @@ namespace HowlingEscape
         public void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.SetRenderTarget(render);
-            graphics.GraphicsDevice.Clear(Color.BlueViolet);
+            graphics.GraphicsDevice.Clear(new Color(190, 208, 202));
             graphics.GraphicsDevice.BlendState = BlendState.AlphaBlend;
             graphics.GraphicsDevice.SamplerStates[0] = SamplerState.PointClamp;
             graphics.GraphicsDevice.RasterizerState = RasterizerState.CullNone;

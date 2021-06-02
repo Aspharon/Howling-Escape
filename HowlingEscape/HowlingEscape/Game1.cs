@@ -16,12 +16,14 @@ namespace HowlingEscape
     {
         private InputHelper inputHelper;
         private GraphicsHelper graphicsHelper;
+        private Wolf wolf;
+        private Vine vine;
         public static ContentManager contentManager;
         public static Random rand;
-        public static float speed = 4;
+        public static int speed = 4;
         public static int gamestate;
 
-        int timeSinceLastBush;
+        int timeSinceLastBush, timeSinceLastTree;
 
         public Game1()
         {
@@ -41,16 +43,30 @@ namespace HowlingEscape
         /// </summary>
         protected override void Initialize()
         {
-            Background BG = new Background();
+            Background BG = new Background(contentManager.Load<Texture2D>("start"), 0, 1);
             Objects.List.Add(BG);
+            gamestate = 1;
+            base.Initialize();
+        }
 
-            Wolf wolf = new Wolf();
+        void Start()
+        {
+            gamestate = 0;
+            Objects.List.Clear();
+            Background BG1 = new Background(contentManager.Load<Texture2D>("BG1"), speed / 4, 60);
+            Objects.List.Add(BG1);
+            Background BG2 = new Background(contentManager.Load<Texture2D>("BG2"), speed / 4 * 2, 120);
+            Objects.List.Add(BG2);
+            Background BG3 = new Background(contentManager.Load<Texture2D>("BG3"), speed / 4 * 3, 240);
+            Objects.List.Add(BG3);
+            Background BG4 = new Background(contentManager.Load<Texture2D>("BG4"), speed, 357);
+            Objects.List.Add(BG4);
+
+            wolf = new Wolf();
             Objects.List.Add(wolf);
 
-            Vine vine = new Vine();
+            vine = new Vine();
             Objects.List.Add(vine);
-
-            base.Initialize();
         }
 
         /// <summary>
@@ -69,16 +85,17 @@ namespace HowlingEscape
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            inputHelper.Update(gameTime);
+
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+
             if (gamestate == 0)
             {
-                inputHelper.Update(gameTime);
-
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                    Exit();
-
                 timeSinceLastBush++;
+                timeSinceLastTree++;
 
-                if (timeSinceLastBush > 100 && rand.Next(100) == 1)
+                if (timeSinceLastBush > 100 && rand.Next(100) == 1 || timeSinceLastBush > 360)
                 {
                     timeSinceLastBush = 0;
                     Bush bush = new Bush();
@@ -90,9 +107,41 @@ namespace HowlingEscape
                     Bird bird = new Bird();
                     Objects.List.Add(bird);
                 }
-            }
 
-            // TODO: Add your update logic here
+                if (timeSinceLastTree > 4 && rand.Next(6) == 1)
+                {
+                    timeSinceLastTree = 0;
+                    Tree tree = new Tree();
+                    Objects.List.Add(tree);
+                }
+                
+                //The following code removes the wolf, vine, and bushes from the object list, and then re-adds them, ensuring they get drawn in the right order. It's filthy and not at all recommended.
+
+                List<Bush> bushes = new List<Bush>();
+                foreach(Bush bush in Objects.List.OfType<Bush>())
+                {
+                    bushes.Add(bush);
+                }
+
+                foreach (Bush bush in bushes)
+                {
+                    Objects.List.Remove(bush);
+                    Objects.List.Add(bush);
+                }
+
+                Objects.List.Remove(vine);
+                Objects.List.Add(vine);
+
+                Objects.List.Remove(wolf);
+                Objects.List.Add(wolf);
+            }
+            else
+            {
+                if (inputHelper.KeyDown(Keys.Space))
+                {
+                    Start();
+                }
+            }
 
             base.Update(gameTime);
             graphicsHelper.Update(gameTime);
